@@ -1,0 +1,84 @@
+.blog {
+  display: block;
+  padding-bottom: 14rem;
+  &-container {
+    @include section(1130px);
+  }
+  &-block {
+    max-width: 60.6rem;
+    margin: 0 auto 7.8rem;
+    text-align: center;
+  }
+  &-heading {
+    max-width: 45.4rem;
+    margin: 0 auto 2.5rem;
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 3.4rem;
+  }
+  &-item {
+    background: #ffffff;
+    box-shadow: 0px 46px 100px -31px rgba(0, 0, 0, 0.1);
+    border-radius: 17px;
+    cursor: pointer;
+    &:hover {
+      .blog-title {
+        color: #f58c11;
+      }
+    }
+  }
+  &-img {
+    max-width: 35.4rem;
+    max-height: 32.2rem;
+    width: 100%;
+    height: 100%;
+  }
+  &-content {
+    padding: 3.3rem 2.5rem 3.5rem;
+  }
+  &-title {
+    font-size: 1.8rem;
+    line-height: calc(27 / 18);
+    margin-bottom: 0.9rem;
+    transition: all 0.25s;
+  }
+  &-text {
+    font-size: 1.3rem;
+    line-height: 1.54;
+    color: #6d7f94;
+  }
+  @include maxWidth(1279px) {
+    &-img {
+      height: auto;
+    }
+  }
+  @include maxWidth(767px) {
+    padding-bottom: 9rem;
+    &-list {
+      padding-left: 1rem;
+      grid-template-columns: unset;
+      grid-auto-flow: column;
+      grid-auto-columns: 90%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    &-item {
+      scroll-snap-align: center;
+      box-shadow: 0px 46px 30px -31px rgba(0, 0, 0, 0.1);
+    }
+  }
+  @include maxWidth(374px){
+    &-list{
+      gap: 0 2rem;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.testimonial {
+  display: block;
+  padding-bottom: 14rem;
+  &-container {
+    @include section(1130px);
+    @include flexBox;
+    gap: 0 20.8rem;
+  }
+  &-content {
+    max-width: 40rem;
+    width: 100%;
+  }
+  &-caption {
+    margin-bottom: 1.1rem;
+  }
+  &-heading {
+    line-height: calc(70 / 40);
+    margin-bottom: 2.5rem;
+  }
+  &-desc {
+    line-height: calc(26 / 16);
+    color: #79899d;
+    margin-bottom: 1.9rem;
+  }
+  &-feedback {
+    @include flexBox(center, start);
+    gap: 0 1rem;
+    margin-bottom: 3.3rem;  
+  }
+  &-number {
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 1.04;
+    color: #f4a11a;
+  }
+  &-text {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.62;
+    color: #8189a3;
+  }
+  @include maxWidth(1023px){
+    padding-bottom: 9rem;
+    &-container{
+      gap: 0 4rem;
+    }
+    &-heading{
+      font-size: 2.4rem;
+    }
+  }
+  @include maxWidth(767px){
+    &-container{
+      flex-direction: column;
+      gap: 3rem 0;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.newsletter {
+  display: block;
+  padding-bottom: 14rem;
+  &-container {
+    @include section(1130px);
+    @include flexBox(center, center);
+    gap: 0 1.9rem;
+  }
+  &-content {
+    max-width: 40.4rem;
+    width: 100%;
+  }
+  &-heading {
+    font-weight: 600;
+    font-size: 4.8rem;
+    line-height: 1.21;
+    text-transform: none;
+    margin-bottom: 2.5rem;
+  }
+  &-desc {
+    color: #787e86;
+  }
+  &-form {
+    max-width: 37.3rem;
+    width: 100%;
+    @include flexBox;
+    background-color: white;
+    border-radius: 26.5px;
+    position: relative;
+  }
+  &-input {
+    padding: 15px 21px;
+    font-family: $font;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: calc(24 / 16);
+    color: #6b7d93;
+    border-top-left-radius: 26.5px;
+    border-bottom-left-radius: 26.5px;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    flex: 1;
+    // width: 100%;
+    &:focus + .newsletter-label,
+    &:not(:placeholder-shown) + .newsletter-label {
+      transform: translate(50%, -220%);
+    }
+  }
+  &-label {
+    position: absolute;
+    top: 50%;
+    left: 21px;
+    position: absolute;
+    color: #6b7d93;
+    z-index: 1;
+    // padding: 0 10px;
+    // background-color: white;
+    transform: translateY(-50%);
+    transition: all 0.25s linear;
+  }
+  &-btn {
+    padding: 15px 30px;
+  }
+  @include maxWidth(1279px) {
+    &-form {
+      max-width: 100%;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding-bottom: 9rem;
+    &-heading {
+      font-size: 3.8rem;
+    }
+  }
+  @include maxWidth(767px) {
+    &-container {
+      flex-direction: column;
+      gap: 3rem 0;
+    }
+    &-input {
+      width: 90%;
+    }
+    &-btn {
+      padding: 15px 20px;
+    }
+  }
+  @include maxWidth(374px) {
+    &-heading {
+      font-size: 2.4rem;
+    }
+  }
+}

@@ -1,0 +1,247 @@
+.header {
+  display: block;
+  padding-top: 14.5rem;
+  padding-bottom: 14rem;
+  &-container {
+    @include section(1120px);
+    position: relative;
+    transform: translateX(3.5rem);
+  }
+  &-top {
+    @include flexBox();
+    padding-top: 3rem;
+    margin-bottom: 2rem;
+  }
+  &-menu {
+    @include flexBox;
+    gap: 10rem;
+  }
+  &-list {
+    @include flexBox;
+    gap: 3.8rem;
+  }
+  &-item {
+    @media (hover: hover){
+    
+      &:hover {
+        .header-link {
+          color: $primary-color;
+        }
+        &::after {
+          width: 100%;
+          left: 0;
+          right: auto;
+        }
+      }
+    }
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      left: auto;
+      bottom: -0.2rem;
+      right: 0;
+      height: 2px;
+      background-color: $primary-color;
+      transition: all 0.25s;
+    }
+  }
+  
+  &-link {
+    font-weight: 500;
+    color: $gray-dark-color;
+    line-height: calc(24 / 16);
+    transition: all 0.25s;
+  }
+  &-auth {
+    @include flexBox;
+    gap: 1.3rem;
+  }
+  &-signup {
+    padding: 12px 32px;
+  }
+  &-toggle{
+    font-size: 2rem;
+    color: $primary-color;
+    display: none;
+  }
+  &-main {
+    position: relative;
+    min-height: 57.3rem;
+    @include flexBox(start, center, column);
+  }
+  &-content {
+    max-width: 49.6rem;
+    width: 100%;
+  }
+  &-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(6rem, 0.5rem);
+  }
+  &-caption {
+    font-size: 1.3rem;
+    margin-bottom: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.185em;
+  }
+  &-heading {
+    font-size: 5rem;
+    line-height: calc(56 / 50);
+    margin-bottom: 2.5rem;
+  }
+  &-desc {
+    line-height: calc(26 / 16);
+    margin-bottom: 5rem;
+  }
+  &-action {
+    @include flexBox(center, start);
+    gap: 0 6.5rem;
+    &-btn {
+      padding: 16px 28px;
+    }
+  }
+  &-media {
+    @include flexBox(center, start);
+    gap: 0 6.5rem;
+  }
+  &-play {
+    @include size(6rem);
+    @include flexBox(center, center);
+    background: #ffffff;
+    box-shadow: 0px 17px 25px rgba(140, 141, 146, 0.12);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  &-watch {
+    font-weight: 500;
+    line-height: calc(24 / 16);
+    color: #101d48;
+  }
+  &-partner {
+    background-color: #f4f7fd;
+    @include flexBox(center, center);
+    gap: 5.5rem;
+    padding: 8rem 0;
+  }
+  @include maxWidth(1439px) {
+    &-container {
+      transform: unset;
+    }
+    &-main {
+      min-height: unset;
+      flex-direction: row;
+      align-items: center;
+      gap: 0 3.8rem;
+    }
+    &-img {
+      position: unset;
+      transform: unset;
+    }
+  }
+  @include maxWidth(1279px) {
+    padding-top: 5rem;
+    &-menu {
+      gap: 0 2rem;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding-bottom: 0;
+    &-top{
+      position: relative;
+    }
+    &-menu {
+      // display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 80%;
+      height: 100%;
+      z-index: 999;
+      background-color: white;
+      display: block;
+      padding: 2.5rem 2rem;
+      transform: translateX(100%);
+      transition: .25s ease;
+      &.is-expand{
+        transform: translateX(0);
+      }
+    }
+    &-list{
+      display: block;
+    }
+    &-item{
+      padding: 2rem 2.5rem;
+      margin-bottom: 1rem;
+      border-radius: 15px;
+      &:last-child{
+        margin-bottom: 3rem;
+      }
+      &:focus, &:hover{
+        background-color: $primary-color;
+        .header-link{
+          color: white;
+        }
+      }
+    }
+    &-auth{
+      justify-content: center;
+    }
+    &-main {
+      flex-direction: column-reverse;
+      gap: 3rem 0;
+      align-items: stretch;
+    }
+    &-img {
+      margin: 0 auto;
+    }
+    &-content {
+      max-width: 100%;
+    }
+    &-toggle{
+      display: block;
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 3rem;
+    &-top{
+      padding-top: 0;
+    }
+    &-heading {
+      font-size: 3rem;
+      margin-bottom: 1.8rem;
+    }
+    &-desc {
+      margin-bottom: 3rem;
+    }
+    &-action {
+      display: block;
+      &-btn {
+        padding: 10px 18px;
+        margin-bottom: 1.8rem;
+      }
+    }
+    &-media {
+      gap: 0 1.8rem;
+    }
+    &-play {
+      @include size(4rem);
+    }
+    &-partner{
+      gap: 0 1rem;
+      padding: 5rem 0 9rem;
+    }
+  }
+  @include maxWidth(374px){
+    &-auth{
+      display: block;
+      padding-left: 2.5rem;
+    }
+    &-login{
+      margin-bottom: 1.5rem;
+
+    }
+  }
+}

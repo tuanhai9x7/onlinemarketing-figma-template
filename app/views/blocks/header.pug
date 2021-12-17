@@ -1,0 +1,36 @@
+header.header 
+	.header-container 
+		.header-top 
+			a.logo.header-logo(href="#!")  
+				img(srcset="images/logo-primary.png 2x", alt="")
+			.header-menu 
+				ul.header-list 
+					+headerItem("Home")
+					+headerItem("Why us?")
+					+headerItem("Freatures")
+					+headerItem("Pricing")
+					+headerItem("Contact")
+				.header-auth 
+					a.btn.btn--white.header-login(href="#!") Login 
+					a.btn.btn--primary.header-signup(href="#!") Sign up
+			.div
+				i.fa.fa-bars.header-toggle 
+		.header-main 
+			.header-content 
+				h4.caption.header-caption AWARD WINNING COMPANY
+				h1.heading.header-heading We Are The Best Digital Markeing
+				p.desc.header-desc You need to get positive results when you spend hard earned revenue and time on any marketing effort. Great returns on marketing and promotions.  
+				.header-action 
+					a.btn.btn--primary.header-action-btn(href="#!") Get Started
+					.header-media
+						a.header-play(href="#!") 
+							img(srcset="images/play.png 2x", alt="")
+						a(href="#!").header-watch Watch Video
+			.header-img 
+				img(srcset="images/header-img.png 2x", alt="")
+	.header-partner 
+		+partnerItem("images/partner-google.png 2x")
+		+partnerItem("images/partner-slack.png 2x")
+		+partnerItem("images/partner-agworld.png 2x")
+		+partnerItem("images/partner-riotinto.png 2x")
+		+partnerItem("images/partner-heroku.png 2x")

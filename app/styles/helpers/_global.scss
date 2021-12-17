@@ -1,0 +1,70 @@
+img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+.btn {
+  line-height: calc(24 / 16);
+  font-weight: 500;
+  padding: 18px 30px;
+  border-radius: 999px;
+  text-transform: capitalize;
+  &--primary {
+    color: white;
+    background: linear-gradient(103.38deg, #f67102 5.1%, #f4a91e 86.29%);
+  }
+  &--white {
+    color: #f5830b;
+    background-color: transparent;
+    border: 2px solid #e7e7e7;
+    line-height: calc(19 / 16);
+    padding: 14px 34px;
+  }
+  @include maxWidth(1023px){
+    padding: 14px 26px;
+  }
+}
+h1, h2, h3, h4, h5, h6{
+  color: $title-color;
+  font-weight: 600;
+}
+.caption {
+  font-weight: 600;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.16em;
+  color: $primary-color;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+}
+.heading {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1.25;
+  color: $title-color;
+  margin-bottom: 3.2rem;
+  text-transform: capitalize;
+  @include maxWidth(767px){
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  @include maxWidth(374px){
+    font-size: 2.4rem;
+  }
+}
+.desc {
+  font-weight: 500;
+  line-height: calc(24 / 16);
+  color: #5d677e;
+  @include maxWidth(374px){
+    font-size: 1.4rem;
+  }
+}
+
+header, footer, section{
+  display: none;
+}

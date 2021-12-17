@@ -1,0 +1,25 @@
+mixin headerItem(content= "Home")
+	li.header-item 
+		a.header-link(href="#!")= content
+
+//- mixin partnerItem(src)
+//- 	.header-partner-img 
+//- 		img(srcset= src, alt="")
+mixin partnerItem(src)
+	.header-partner-img 
+		img(srcset= src, alt="")
+
+mixin serviceItem(src="images/service-search.png 2x", title="Search Engine", text= "Twit are excet Frond, rnatie boy grub it's tell gone to pot MI Mrs nut butts horse play blow ")
+	.service-item 
+		.service-icon 
+			img(srcset= src, alt="")
+		h5.service-title= title 
+		p.service-text= text
+
+mixin blogItem(src="images/blog-item1.jpg", title="SEO tips and tricks for new", text="Curapitur eleifenc erat id ullarncorper porta, eras turpis tun pus just!), a porititar ju-to ode id oros. Proin lloborti* ")
+	.blog-item
+		.blog-img
+			img(srcset= src, alt="")
+		.blog-content
+			h4.blog-title= title
+			p.blog-text= text
